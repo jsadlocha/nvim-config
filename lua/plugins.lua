@@ -495,4 +495,7 @@ require("lazy").setup {
       require('config.nvim-dap')
     end,
   },
+
+  -- jdtls java lsp
+  { "mfussenegger/nvim-jdtls" },
 }
