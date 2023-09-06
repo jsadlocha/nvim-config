@@ -486,4 +486,13 @@ require("lazy").setup {
       require("config.fidget-nvim")
     end,
   },
+
+  -- nvim dapui debugger
+  {
+    "rcarriga/nvim-dap-ui",
+    dependencies = {"mfussenegger/nvim-dap"},
+    config = function()
+      require('config.nvim-dap')
+    end,
+  },
 }
