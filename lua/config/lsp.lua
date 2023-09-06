@@ -271,3 +271,20 @@ diagnostic.config {
 lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
   border = "rounded",
 })
+
+if utils.executable('typescript-language-server') then
+  lspconfig.tsserver.setup {}
+end
+
+if utils.executable('vscode-html-language-server') then
+  lspconfig.html.setup {
+    capabilities = capabilities,
+  }
+end
+
+if utils.executable('vscode-css-language-server') then
+  lspconfig.cssls.setup {
+    capabilities = capabilities,
+    filetypes = { "css", "scss", "less", "sass" },
+  }
+end
