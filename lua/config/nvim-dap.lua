@@ -109,20 +109,3 @@ end, { desc = "Close debugger (dap)" })
 vim.keymap.set('n', '<leader>B', function()
   require 'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, { desc = "Conditional Breakpoint (dap)" })
 
-
--- vim.api.nvim_create_autocmd(
---   {"InsertLeave"}, {
---   pattern = {"*"},
---   callback = function(ev)
---     vim.notify_once("Insert Leave")
---   end
--- })
-
--- vim.api.nvim_create_autocmd(
---   {"ColorScheme"}, {
---   pattern = {"*"},
---   callback = function(ev)
---     vim.notify_once("Welcome Master!")
---   end
--- })
-
