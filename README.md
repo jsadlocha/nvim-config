@@ -36,6 +36,9 @@
 </p>
 </div>
 
+# Fork Information
+I manage only Jaras branch, this is my personal neovim config for daily usage.
+
 # Introduction
 
 This repo hosts my Nvim configuration for Linux, macOS, and Windows.
