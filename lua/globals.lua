@@ -73,3 +73,10 @@ vim.g.loaded_matchparen = 1
 
 -- Disable sql omni completion, it is broken.
 vim.g.loaded_sql_completion = 1
+
+-- folding code :za :zf
+vim.opt.fillchars = { fold = " " }
+vim.opt.foldmethod = "indent" -- "indent" "syntax"
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.g.markdown_folding = 1 -- enable markdown markdown_folding
