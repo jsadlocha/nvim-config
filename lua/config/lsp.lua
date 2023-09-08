@@ -18,7 +18,7 @@ local set_qflist = function(buf_num, severity)
   vim.cmd[[copen]]
 end
 
-local custom_attach = function(client, bufnr)
+vim.lsp.util.custom_attach = function(client, bufnr)
   -- Mappings.
   local map = function(mode, l, r, opts)
     opts = opts or {}
@@ -124,7 +124,7 @@ if utils.executable("pylsp") then
   end
 
   lspconfig.pylsp.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     settings = {
       pylsp = {
         plugins = {
@@ -162,7 +162,7 @@ end
 
 -- if utils.executable('pyright') then
 --   lspconfig.pyright.setup{
---     on_attach = custom_attach,
+--     on_attach = vim.lsp.util.custom_attach,
 --     capabilities = capabilities
 --   }
 -- else
@@ -171,7 +171,7 @@ end
 
 if utils.executable("ltex-ls") then
   lspconfig.ltex.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     cmd = { "ltex-ls" },
     filetypes = { "text", "plaintex", "tex", "markdown" },
     settings = {
@@ -185,7 +185,7 @@ end
 
 if utils.executable("clangd") then
   lspconfig.clangd.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     capabilities = capabilities,
     filetypes = { "c", "cpp", "cc" },
     flags = {
@@ -197,7 +197,7 @@ end
 -- set up vim-language-server
 if utils.executable("vim-language-server") then
   lspconfig.vimls.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     flags = {
       debounce_text_changes = 500,
     },
@@ -210,7 +210,7 @@ end
 -- set up bash-language-server
 if utils.executable("bash-language-server") then
   lspconfig.bashls.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     capabilities = capabilities,
   }
 end
@@ -218,7 +218,7 @@ end
 if utils.executable("lua-language-server") then
   -- settings for lua-language-server can be found on https://github.com/LuaLS/lua-language-server/wiki/Settings .
   lspconfig.lua_ls.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     settings = {
       Lua = {
         runtime = {
@@ -274,20 +274,20 @@ lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
 
 if utils.executable('typescript-language-server') then
   lspconfig.tsserver.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
   }
 end
 
 if utils.executable('vscode-html-language-server') then
   lspconfig.html.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     capabilities = capabilities,
   }
 end
 
 if utils.executable('vscode-css-language-server') then
   lspconfig.cssls.setup {
-    on_attach = custom_attach,
+    on_attach = vim.lsp.util.custom_attach,
     capabilities = capabilities,
     filetypes = { "css", "scss", "less", "sass" },
   }
