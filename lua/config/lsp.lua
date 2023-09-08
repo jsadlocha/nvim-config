@@ -273,17 +273,21 @@ lsp.handlers["textDocument/hover"] = lsp.with(vim.lsp.handlers.hover, {
 })
 
 if utils.executable('typescript-language-server') then
-  lspconfig.tsserver.setup {}
+  lspconfig.tsserver.setup {
+    on_attach = custom_attach,
+  }
 end
 
 if utils.executable('vscode-html-language-server') then
   lspconfig.html.setup {
+    on_attach = custom_attach,
     capabilities = capabilities,
   }
 end
 
 if utils.executable('vscode-css-language-server') then
   lspconfig.cssls.setup {
+    on_attach = custom_attach,
     capabilities = capabilities,
     filetypes = { "css", "scss", "less", "sass" },
   }
