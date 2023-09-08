@@ -229,3 +229,15 @@ keymap.set("n", "<leader>cb", function()
     cnt = cnt + 1
   end))
 end)
+
+keymap.set("n", "<space>bn", function()
+    vim.cmd(":bn")
+end, { desc = "Buffor next" })
+
+keymap.set("n", "<space>bp", function()
+    vim.cmd(":bp")
+end, { desc = "Buffor previous" })
+
+keymap.set("n", "<space>bd", function()
+    vim.cmd(":bd")
+end, { desc = "Buffor delete" })
