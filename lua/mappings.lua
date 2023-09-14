@@ -241,3 +241,11 @@ end, { desc = "Buffor previous" })
 keymap.set("n", "<space>bd", function()
     vim.cmd(":bd")
 end, { desc = "Buffor delete" })
+
+keymap.set("n", "<space>bb", function()
+    vim.cmd(":b" .. vim.fn.input("File id: "))
+end, { desc = "Change to specific buffer" })
+
+keymap.set("n", "<leader>t", function()
+    vim.cmd(":split | term")
+end, { desc = "Split and open term" })
