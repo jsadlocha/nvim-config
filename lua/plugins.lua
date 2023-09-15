@@ -498,4 +498,19 @@ require("lazy").setup {
 
   -- jdtls java lsp
   { "mfussenegger/nvim-jdtls" },
+
+  {
+    "jackMort/ChatGPT.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup({
+          api_key_cmd = "cat /home/hardware/Documents/Files/api.txt"
+        })
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
+  }
 }
