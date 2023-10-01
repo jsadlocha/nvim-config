@@ -53,6 +53,9 @@ dap.configurations.python = {
         return '/usr/bin/python'
       end
     end;
+    autoReload = {
+      enable = true;
+    };
   },
 }
 
