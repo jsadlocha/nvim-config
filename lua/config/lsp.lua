@@ -292,3 +292,11 @@ if utils.executable('vscode-css-language-server') then
     filetypes = { "css", "scss", "less", "sass" },
   }
 end
+
+if utils.executable('kotlin-language-server') then
+  lspconfig.tsserver.setup {
+    on_attach = vim.lsp.util.custom_attach,
+    capabilities = capabilities,
+    filetypes = { "kotlin" },
+  }
+end
