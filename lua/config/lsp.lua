@@ -300,3 +300,11 @@ if utils.executable('kotlin-language-server') then
     filetypes = { "kotlin" },
   }
 end
+
+if utils.executable('bash-language-server') then
+  lspconfig.bashls.setup {
+    on_attach = vim.lsp.util.custom_attach,
+    capabilities = capabilities,
+    filetypes = { "sh" },
+  }
+end
