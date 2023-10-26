@@ -250,3 +250,6 @@ end, { desc = "Change to specific buffer" })
 keymap.set("n", "<leader>t", function()
     vim.cmd(":split | term")
 end, { desc = "Split and open term" })
+
+keymap.set("n", "<C-_>", '<Plug>CommentaryLine', {})
+
