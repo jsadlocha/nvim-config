@@ -252,4 +252,5 @@ keymap.set("n", "<leader>t", function()
 end, { desc = "Split and open term" })
 
 keymap.set("n", "<C-_>", '<Plug>CommentaryLine', {})
+keymap.set("x", "<C-_>", '<Plug>Commentary', {})
 
